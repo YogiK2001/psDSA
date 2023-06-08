@@ -81,6 +81,7 @@ public:
             while (!window.empty() && nums[window.back()] < nums[i])
                 window.pop_back();
 
+            // Push the elements in the window
             window.push_back(i);
 
             // Process the window when it reaches the required size
