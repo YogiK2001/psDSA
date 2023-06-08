@@ -1,8 +1,8 @@
 /*Majority element is an element that appears more than n/2 times in an array of size n. */
 
-import java.util.*;
-import java.io.*;
-import java.lang.*;
+// import java.util.*;
+// import java.io.*;
+// import java.lang.*;
 
 public class mva {
 
