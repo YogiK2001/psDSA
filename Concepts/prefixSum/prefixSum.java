@@ -22,7 +22,7 @@
  * Time Complexity : O(n)
  */
 
-import java.io.*;
+// import java.io.*;
 
 class PrefixSum {
     private static void fillPrefix(int arr[], int preArray[], int n) {

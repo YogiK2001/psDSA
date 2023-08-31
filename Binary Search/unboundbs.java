@@ -1,8 +1,8 @@
 // Searching a Target in a Infinite Sorted Array and returning its index
 
-import java.util.*;
-import java.io.*;
-import java.lang.*;
+// import java.util.*;
+// import java.io.*;
+// import java.lang.*;
 
 class GFG {
     static int bSearch(int arr[], int low, int high, int x) {
