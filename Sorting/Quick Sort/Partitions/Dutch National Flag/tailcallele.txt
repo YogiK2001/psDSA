@@ -1,0 +1,59 @@
+Tail-recursive is better than a non-tail recursive as tail-recursion can be optimized by modern compilers. Modern compiler basically does tail call elimination to optimize the tail-recursive code. 
+
+If we take a closer look at the above function, we can remove the last call with goto. Below are examples of tail call elimination.
+
+// C++ Example
+#include <bits/stdc++.h>
+using namespace std;
+
+void print(int n)
+{
+start:
+    if (n < 0)
+       return;
+    cout<<n;
+ 
+    // Update parameters of recursive call
+    // and replace recursive call with goto
+    n = n-1;
+    goto start;
+}
+
+
+// Normal QC
+void quickSort(int arr[], int low, int high)
+{
+    if (low < high)
+    {
+        /* pi is partitioning index, arr[p] is now
+           at right place */
+        int pi = partition(arr, low, high);
+
+        // Separately sort elements before
+        // partition and after partition
+        quickSort(arr, low, pi - 1);
+        quickSort(arr, pi + 1, high);
+    }
+}
+
+// Tail Call Elemenation QC
+void quickSort(int arr[], int low, int high)
+{
+start:
+    if (low < high)
+    {
+        /* pi is partitioning index, arr[p] is now
+           at right place */
+        int pi = partition(arr, low, high);
+ 
+        // Separately sort elements before
+        // partition and after partition
+        quickSort(arr, low, pi - 1);
+ 
+        // Update parameters of recursive call
+        // and replace recursive call with goto
+        low = pi+1;
+        high = high;
+        goto start;
+    }
+}
